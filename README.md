@@ -76,6 +76,7 @@ Root
 ```
 5. run CoCo_AnnotationYCB.py to annotate YCB-Video Dataset.
 6. download weights from (Networks Folder) from [Link] (https://drive.google.com/drive/folders/1k8fjShIf7mDYztB_KSyvQyC2Qy5kKm4Q?usp=sharing)
+7. Download Annotation Files from [annotation] (https://drive.google.com/drive/folders/1u2WSlYTJs5lFrS7_wYwDmB6Lz5oSpG5I?usp=sharing) and put them in source Folder (see Data Structure)
 ### Training Strategy
 
 1. go to config.py in lib folder and chose the config file Config-Class.yaml as configuration file to train  Backbone, BiFPN, Class and bbox regression head (For training run main.py). 
