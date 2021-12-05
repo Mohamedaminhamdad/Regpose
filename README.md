@@ -85,6 +85,6 @@ Root
 
 ### Testing or Validation 
 
-1. go to config.py in lib folder and chose the config file Config-All.yaml as configuration file to test, choose the used network (e.g: ../Networks/Regpose6D-Final.checkpoint) to test the 6D head architecture for example.
+1. go to config.py in lib folder and chose the config file Config-Test.yaml as configuration file to test, choose the used network (e.g: ../Networks/Regpose6D-Final.checkpoint) to test the 6D head architecture for example.
 2. run the model using eval.py in tools folder.
 
