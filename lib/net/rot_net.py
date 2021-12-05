@@ -22,16 +22,16 @@ def compute_rotation_matrix_from_ortho6d(ortho6d):
     z = z.view(-1,3,1)
     matrix = torch.cat((x,y,z), 2) 
     return matrix
-def normalize_vector( v, return_mag =False):
+def normalize_vector( v):
     batch=v.shape[0]
     v_mag = torch.sqrt(v.pow(2).sum(1))# batch
-    v_mag = torch.max(v_mag, torch.autograd.Variable(torch.FloatTensor([1e-8])).cuda())
+    if torch.cuda.is_available():
+        v_mag = torch.max(v_mag, torch.autograd.Variable(torch.FloatTensor([1e-8])).cuda()) # remove cuda() to not use GPU 
+    else: 
+        v_mag = torch.max(v_mag, torch.autograd.Variable(torch.FloatTensor([1e-8])))
     v_mag = v_mag.view(batch,1).expand(batch,v.shape[1])
     v = v/v_mag
-    if(return_mag==True):
-        return v, v_mag[:,0]
-    else:
-        return v
+    return v
 def cross_product( u, v):
     """
     Fuction to perform the cross product between two tensors [bs,1,3]
