@@ -225,4 +225,4 @@ def test( arg, data_loader, model, classes_model,prj_vtx,model_info):
     Eval.evaluate_pose_add('ADD')
     Eval.evaluate_pose_add('ADD-S','symmetric')
     Eval.evaluate_trans()
-    return regressor, classes
+    return

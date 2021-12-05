@@ -16,12 +16,12 @@ class Dataset():
         self.split=split
         if split == 'train':
             self.dir=director.dataset_dir
-            with open(os.path.join(director.dataset_dir,'keyframe.json'),'r') as f: 
+            with open(os.path.join(director.dataset_dir,'train_synt.json'),'r') as f: 
                 self.data=json.load(f)
             self.real_num = len(self.data['images'])
         else: 
             self.dir=director.dataset_dir
-            with open(os.path.join(director.dataset_dir,'keyframe.json'),'r') as f: 
+            with open(os.path.join(director.dataset_dir,'keyframe_yolo.json'),'r') as f: 
                 self.data=json.load(f)
             self.real_num = len(self.data['images'])
     def allocentric2egocentric(self,qt, T):

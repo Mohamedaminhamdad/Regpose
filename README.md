@@ -14,7 +14,7 @@ Regpose is an end-to-end 6DoF pose estimation network. Regpose estimated the cla
 
 ### Installation
 
-Use python3.
+Use python3.8.11
 1. Install python packages
    ```Shell
    pip install -r requirement.txt
@@ -29,6 +29,8 @@ Use python3.
 Root
 ├── CoCo_AnnotationYCB.py
 |── syn_generator.py
+|── keyframe.json (Test-json annotation File generated using CoCo_AnnotationYCB.py)
+|── train_synt.json (Train-json annotation File generated using CoCo_AnnotationYCB.py)
 ├── images 
 │   ├─── 0000
 │   │   └── 0001
@@ -68,11 +70,12 @@ Root
    |     	└── Config-Test.yaml (Config File for validation and testing)
    └──  exp (automatically built in running containing output models) 
    |
-   └──Networks (Folder containing final weights)
+   └──Networks (Folder containing final weights to be downloaded)
     └──Regpose6D-Final.checkpoint
     └── Regquat-Final.checkpoint
 ```
 5. run CoCo_AnnotationYCB.py to annotate YCB-Video Dataset.
+6. download weights from (Networks Folder) from [Link] (https://drive.google.com/drive/folders/1k8fjShIf7mDYztB_KSyvQyC2Qy5kKm4Q?usp=sharing)
 ### Training Strategy
 
 1. go to config.py in lib folder and chose the config file Config-Class.yaml as configuration file to train  Backbone, BiFPN, Class and bbox regression head (For training run main.py). 

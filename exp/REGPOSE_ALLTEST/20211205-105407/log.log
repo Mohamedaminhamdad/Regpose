@@ -1,3 +1,0 @@
-[32m[1205 10:54:07 @logger.py:74][0m Argv: /home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/tools/main.py
-[32m[1205 10:54:08 @model.py:118][0m => loading model '../Networks/Regquat-Final.checkpoint'
-[32m[1205 10:54:08 @dataset.py:14][0m ==> initializing YCB train data.
