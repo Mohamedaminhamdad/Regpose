@@ -71,7 +71,7 @@ def main():
         """
         obj_vtx[obj] = np.loadtxt(os.path.join(director.model_dir,obj,'points.xyz'))
         model_info_[obj] = model_info(obj_vtx[obj])
-    log_dict_val, preds = test(arg, test_loader, network, classes[arg.dataset.name],obj_vtx,model_info_)
+    test(arg, test_loader, network, classes[arg.dataset.name],obj_vtx,model_info_)
     
     
 if __name__ == '__main__':
