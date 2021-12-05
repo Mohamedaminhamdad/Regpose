@@ -10,8 +10,8 @@ def R_from_6d(Output_network):
     m1 = Output_network[:,0:3] # Network gives an Output of 6 degree of freedom. three of them are useless. 
     m2 = Output_network[:,3:6]
     """
-    IN order to recover the rotaiton matric from the 6dof representation the Gram-Schmit process is used normalization follwed
-    by cross products
+    In order to recover the rotaiton matric from the 6dof representation the Gram-Schmit process is used: normalization followed
+    by cross products to build a rotation matrix
     See: https://arxiv.org/abs/1812.07035
     """    
     x = norm(m1)
