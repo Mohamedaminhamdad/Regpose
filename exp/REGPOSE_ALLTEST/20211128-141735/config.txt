@@ -1,0 +1,27 @@
+==> Cmd:
+['/home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/tools/eval.py']
+==> Opt:
+  clear: <built-in method clear of EasyDict object at 0x7f481af37cc0>
+  copy: <built-in method copy of EasyDict object at 0x7f481af37cc0>
+  dataset: {'name': 'YCB'}
+  fromkeys: <built-in method fromkeys of type object at 0x55cdfaaee370>
+  get: <built-in method get of EasyDict object at 0x7f481af37cc0>
+  items: <built-in method items of EasyDict object at 0x7f481af37cc0>
+  keys: <built-in method keys of EasyDict object at 0x7f481af37cc0>
+  loss: {'class_loss_type': 'FocalLoss', 'class_loss_weight': 1, 'reg_loss_weight': 1, 'rot_loss_type': 'quatloss', 'rot_loss_weight': 0, 'trans_loss_type': 'L1', 'trans_loss_weight': 0, 'backbone_loss_weight': 0}
+  network: {'arch': 'resnet', 'back_freeze': True, 'back_input_channel': 3, 'back_layers_num': 34, 'class_head_freeze': True, 'rot_head_freeze': True, 'rot_representation': 'quat', 'trans_head_freeze': True}
+  pop: <bound method EasyDict.pop of {'dataset': {'name': 'YCB'}, 'pytorch': {'exp_id': 'REGPOSE_ALLTEST', 'task': 'Position', 'gpu': -1, 'threads_num': 10, 'save_mode': 'all', 'load_model': '../Networks/Regquat-Final.checkpoint', 'test': True, 'gt': False, 'cfg': '../Config-Files/Quat-Head/Config-Test.yaml', 'save_path': '/home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib/../exp/REGPOSE_ALLTEST/20211128-141735'}, 'train': {'begin_epoch': 1, 'end_epoch': 20, 'test_interval': 1, 'train_batch_size': 8, 'lr': 0.0001, 'lr_epoch_step': [10, 20, 30], 'lr_factor': 0.1, 'optimizer_name': 'adamw', 'momentum': 0.0, 'weightDecay': 0.0, 'alpha': 0.99, 'epsilon': 1e-08, 'Beta': 0}, 'network': {'arch': 'resnet', 'back_freeze': True, 'back_input_channel': 3, 'back_layers_num': 34, 'class_head_freeze': True, 'rot_head_freeze': True, 'rot_representation': 'quat', 'trans_head_freeze': True}, 'loss': {'class_loss_type': 'FocalLoss', 'class_loss_weight': 1, 'reg_loss_weight': 1, 'rot_loss_type': 'quatloss', 'rot_loss_weight': 0, 'trans_loss_type': 'L1', 'trans_loss_weight': 0, 'backbone_loss_weight': 0}}>
+  popitem: <built-in method popitem of EasyDict object at 0x7f481af37cc0>
+  pytorch: {'exp_id': 'REGPOSE_ALLTEST', 'task': 'Position', 'gpu': -1, 'threads_num': 10, 'save_mode': 'all', 'load_model': '../Networks/Regquat-Final.checkpoint', 'test': True, 'gt': False, 'cfg': '../Config-Files/Quat-Head/Config-Test.yaml', 'save_path': '/home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib/../exp/REGPOSE_ALLTEST/20211128-141735'}
+  setdefault: <built-in method setdefault of EasyDict object at 0x7f481af37cc0>
+  train: {'begin_epoch': 1, 'end_epoch': 20, 'test_interval': 1, 'train_batch_size': 8, 'lr': 0.0001, 'lr_epoch_step': [10, 20, 30], 'lr_factor': 0.1, 'optimizer_name': 'adamw', 'momentum': 0.0, 'weightDecay': 0.0, 'alpha': 0.99, 'epsilon': 1e-08, 'Beta': 0}
+  update: <bound method EasyDict.update of {'dataset': {'name': 'YCB'}, 'pytorch': {'exp_id': 'REGPOSE_ALLTEST', 'task': 'Position', 'gpu': -1, 'threads_num': 10, 'save_mode': 'all', 'load_model': '../Networks/Regquat-Final.checkpoint', 'test': True, 'gt': False, 'cfg': '../Config-Files/Quat-Head/Config-Test.yaml', 'save_path': '/home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib/../exp/REGPOSE_ALLTEST/20211128-141735'}, 'train': {'begin_epoch': 1, 'end_epoch': 20, 'test_interval': 1, 'train_batch_size': 8, 'lr': 0.0001, 'lr_epoch_step': [10, 20, 30], 'lr_factor': 0.1, 'optimizer_name': 'adamw', 'momentum': 0.0, 'weightDecay': 0.0, 'alpha': 0.99, 'epsilon': 1e-08, 'Beta': 0}, 'network': {'arch': 'resnet', 'back_freeze': True, 'back_input_channel': 3, 'back_layers_num': 34, 'class_head_freeze': True, 'rot_head_freeze': True, 'rot_representation': 'quat', 'trans_head_freeze': True}, 'loss': {'class_loss_type': 'FocalLoss', 'class_loss_weight': 1, 'reg_loss_weight': 1, 'rot_loss_type': 'quatloss', 'rot_loss_weight': 0, 'trans_loss_type': 'L1', 'trans_loss_weight': 0, 'backbone_loss_weight': 0}}>
+  values: <built-in method values of EasyDict object at 0x7f481af37cc0>
+==> Ref:
+  cur_dir: /home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib
+  dataset_dir: /home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib/../..
+  exp_dir: /home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib/../exp
+  model_dir: /home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib/../../models
+  np: <module 'numpy' from '/home/mohamed/anaconda3/envs/d2l/lib/python3.8/site-packages/numpy/__init__.py'>
+  os: <module 'os' from '/home/mohamed/anaconda3/envs/d2l/lib/python3.8/os.py'>
+  root_dir: /home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/lib/..

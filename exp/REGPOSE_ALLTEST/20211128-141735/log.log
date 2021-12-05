@@ -1,0 +1,4 @@
+[32m[1128 14:17:35 @logger.py:74][0m Argv: /home/mohamed/mohamed/Desktop/YCB_Video_Dataset/Regpose6d/tools/eval.py
+[32m[1128 14:17:36 @eval.py:46][0m GPU Is not in Use-1
+[32m[1128 14:17:36 @dataset.py:14][0m ==> initializing YCB test data.
+[32m[1128 14:17:36 @eval.py:67][0m Load 3D Models

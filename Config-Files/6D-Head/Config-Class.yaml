@@ -1,0 +1,55 @@
+pytorch:
+  exp_id: 'REGPOSE_CLASS' # Task ID: REGPOSE_CLASS|REGPOSE_POSITION| REGPOSE_ALL
+  task: 'class' # class| Position| all
+  gpu: -1          # Use GPU: >-1 No GPU= -1
+  threads_num: 10 # Number of Threads for Dataloader
+  load_model: ' '   # Start Training no model available
+  test: False  # Run in Test-Mode 
+  gt: False   # Use GT bounding box for eval |True| else False
+
+dataset:
+  name: 'YCB'     # Name of Dataset
+
+network:
+  # ------ backbone -------- #
+  arch: 'resnet' # Resten
+  back_freeze: False ## Freeze backbone  and BiFPN |True| False
+  back_input_channel: 3 # Image Channel
+  # Config for Class Head
+  class_head_freeze: False #  ## Freeze Class Head |True| False
+  numBackLayers: 34 # 18 | 34 | 50 | 101 | 152
+  # ------ rotation head -------- #
+  rot_head_freeze: False # Freeze Head
+  rot_representation: 'rot' # |quat| or |rot|
+  # ------ translation head -------- #
+  trans_head_freeze: False # Freeze trans heaad
+
+train:
+  begin_epoch: 0  # Start Epoch   
+  end_epoch: 50 # Maximum number of epochs
+  test_interval: 1 # after each i epochs test model
+  train_batch_size: 1 #  train and test batch size
+  lr: 1e-4   # Start learning rate for the optimizer
+  lr_epoch_step:            
+  - 4
+  - 10
+  - 20 # set epoch number when degradation in lr is performed lr*lr_factor
+  lr_factor: 0.1 #lr_factor for lr scheduling
+  optimizer_name: 'adamw'  # The Optimizer: 
+  momentum: 0.9 
+  weightDecay: 0.0001
+  alpha: 0.99
+  Beta: 0.999
+  epsilon: 1e-8  
+
+loss:
+  class_loss_type: 'FocalLoss' # Loss for Class Loss (FocalLoss) return FL + Regression Loss.
+  class_loss_weight: 1
+  reg_loss_weight: 1
+  reg_loss_weight: 1
+  rot_loss_type: 'acos'  # For quat-Head |quatloss| : 6D-Head: |acos| 
+  rot_loss_weight: 1          # Weight for rot-loss
+  trans_loss_type: 'L1'       # Weight for transloss
+  trans_loss_weight: 1        # Weight for Class-Loss
+
+

@@ -1,0 +1,27 @@
+pytorch:
+  exp_id: 'REGPOSE_ALL' # Task ID: REGPOSE_CLASS|REGPOSE_POSITION| REGPOSE_ALL
+  task: 'Position' # class| Position| all
+  gpu: -1          # Use GPU: >-1 No GPU= -1
+  threads_num: 10 # Number of Threads for Dataloader
+  load_model: '../Networks/Regquat-Final.checkpoint'   # Here must be the final MOdel from REGPOSE_ALL
+  test: True  # Run in Test-Mode 
+  gt: False   # Use GT bounding box for eval |True| else False
+
+dataset:
+  name: 'YCB'     # Name of Dataset
+
+network:
+  # ------ backbone -------- #
+  arch: 'resnet' # Resten
+  back_freeze: True ## Freeze backbone  and BiFPN |True| False
+  back_input_channel: 3 # Image Channel
+  # Config for Class Head
+  class_head_freeze: True #  ## Freeze Class Head |True| False
+  numBackLayers: 34 # 18 | 34 | 50 | 101 | 152
+  # ------ rotation head -------- #
+  rot_head_freeze: True # Freeze Head
+  rot_representation: 'rot' # |quat| or |rot|
+  # ------ translation head -------- #
+  trans_head_freeze: True # Freeze trans heaad
+
+
