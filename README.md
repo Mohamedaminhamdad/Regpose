@@ -3,7 +3,7 @@
 ### Introduction
 
 In this project The 6DoF Pose estimation Network Regpose was implemented: 
-Regpose is an end-to-end 6DoF pose estimation network. Regpose estimated the class of objects appearing in an images frame and theire class. Followed by regressing the global translation and rotation. The network has two different approaches implemented, how it regresses the rotation, one using a quaternion representation and one using a 6D rotation representation. The approach is motivated by Efficientdet [arXiv](https://arxiv.org/abs/1911.09070). The code was taken from [Project](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch/tree/master/efficientdet).
+Regpose is an end-to-end 6DoF pose estimation network. Regpose estimated the class of objects appearing in an images frame and theire class. Followed by regressing the global translation and rotation. The network has two different approaches implemented, how it regresses the rotation, one using a quaternion representation and one using a 6D rotation representation. The approach is motivated by Efficientdet [arXiv](https://arxiv.org/abs/1911.09070). The code was taken from [Project](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch).
 
 <p align="center"><img src="./Pictures/Network_architecture.png" width="640" height="320"/></p>
 ### Required environment
@@ -27,6 +27,8 @@ Use python3.
 
 ```
 Root
+├── CoCo_AnnotationYCB.py
+|── syn_generator.py
 ├── images 
 │   ├─── 0000
 │   │   └── 0001
@@ -50,24 +52,23 @@ Root
 |           |   └── ...
 │           └──  ....
 |
-├── CoCo_AnnotationYCB.py
-|── syn_generator.py
-├── tools
-├── lib
-├── Config-Files (includes Config Files for the two different heads)
-|   └── 6D-Head 
-|       └── Config-All.yaml (Config File for Fine Tuning)
-|       └──  Config-Class.yaml (Config File to train, Backbone, BiFPN, Class and bbox regression head)
-|       └── Config-Pose.yaml (Config File to train translation and Rotation head)
-|       └── Config-Test.yaml (Config File for validation and testing)
-|   └── Quat-Head
-|       └── Config-All.yaml (Config File for Fine Tuning)
-|       └──  Config-Class.yaml (Config File to train, Backbone, BiFPN, Class and bbox regression head)
-|       └── Config-Pose.yaml (Config File to train translation and Rotation head)
-|       └── Config-Test.yaml (Config File for validation and testing)
-└── exp (automatically built in running containing output models) 
-|
-└── Networks (Folder containing final weights)
+|──Regpose 
+   └──  tools
+   └──  lib
+   └──  Config-Files (includes Config Files for the two different heads)
+   | 	└── 6D-Head 
+   |    |	└── Config-All.yaml (Config File for Fine Tuning)
+   |    |	└──  Config-Class.yaml (Config File to train, Backbone, BiFPN, Class and bbox regression head)
+   |    |	└── Config-Pose.yaml (Config File to train translation and Rotation head)
+   |    |	└── Config-Test.yaml (Config File for validation and testing)
+   |	└── Quat-Head
+   |     	└── Config-All.yaml (Config File for Fine Tuning)
+   |     	└──  Config-Class.yaml (Config File to train, Backbone, BiFPN, Class and bbox regression head)
+   |     	└── Config-Pose.yaml (Config File to train translation and Rotation head)
+   |     	└── Config-Test.yaml (Config File for validation and testing)
+   └──  exp (automatically built in running containing output models) 
+   |
+   └──Networks (Folder containing final weights)
     └──Regpose6D-Final.checkpoint
     └── Regquat-Final.checkpoint
 ```
