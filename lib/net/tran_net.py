@@ -41,6 +41,7 @@ class Tran_Reg(nn.Module):
         self.conv_up2 = SeparableConvBlock(256,64)
         self.conv_up4 = SeparableConvBlock(256,64)
         self.conv_up3=SeparableConvBlock(64,10)
+        #self.deconv=torch.nn.ConvTranspose2d(256, 64, 3, stride=2, padding=1, output_padding=1, groups=1, dilation=1)
         self.deconv1=torch.nn.ConvTranspose2d(64, 64, 4, stride=2, padding=1, output_padding=2, groups=1, dilation=1)
         self.x1_upsample = nn.Upsample(scale_factor=2, mode='nearest')
         self.x2_upsample = nn.Upsample(scale_factor=2, mode='nearest')
@@ -62,12 +63,12 @@ class Tran_Reg(nn.Module):
                 P3=self.conv_up4(x[0])
                 p4_w1 = self.p4_weight_relu(self.p4_weight)
                 weight = p4_w1 / (torch.sum(p4_w1, dim=0) + self.epsilon)
-                p3_up = self.conv_up3(self.relu(weight[0] * P1 + weight[1] *P2 +weight[2]*P3 )) # Perform Feature Fusion 
-                P= torchvision.ops.roi_pool(p3_up,bbox,20,1/4)  # Perform Roi Pooling
+                # Connections for P6_0 and P7_0 to P6_1 respectively
+                p3_up = self.conv_up3(self.relu(weight[0] * P1 + weight[1] *P2 +weight[2]*P3 ))
+                P= torchvision.ops.roi_pool(p3_up,bbox,20,1/4) 
                 P = P.view(-1, 10*20*20)
                 for i, l in enumerate(self.lin1):
                     P = l(P)
-                P= F.normalize(P,dim=1,p=2)
                 return P.detach()
         else:
             p2_w1 = self.p2_weight_relu(self.p2_weight)
@@ -83,8 +84,9 @@ class Tran_Reg(nn.Module):
             P3=self.conv_up4(x[0])
             p4_w1 = self.p4_weight_relu(self.p4_weight)
             weight = p4_w1 / (torch.sum(p4_w1, dim=0) + self.epsilon)
-            p3_up = self.conv_up3(self.relu(weight[0] * P1 + weight[1] *P2 +weight[2]*P3 )) # Feature Fusion of all three Feature maps
-            P= torchvision.ops.roi_pool(p3_up,bbox,20,1/4)  # Perform Roi Pooling
+            # Connections for P6_0 and P7_0 to P6_1 respectively
+            p3_up = self.conv_up3(self.relu(weight[0] * P1 + weight[1] *P2 +weight[2]*P3 ))
+            P= torchvision.ops.roi_pool(p3_up,bbox,20,1/4) 
             P = P.view(-1, 10*20*20)
             for i, l in enumerate(self.lin1):
                 P = l(P)

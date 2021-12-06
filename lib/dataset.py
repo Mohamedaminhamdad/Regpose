@@ -21,7 +21,7 @@ class Dataset():
             self.real_num = len(self.data['images'])
         else: 
             self.dir=director.dataset_dir
-            with open(os.path.join(director.dataset_dir,'keyframe_yolo.json'),'r') as f: 
+            with open(os.path.join(director.dataset_dir,'keyframe.json'),'r') as f: 
                 self.data=json.load(f)
             self.real_num = len(self.data['images'])
     def allocentric2egocentric(self,qt, T):
@@ -51,7 +51,8 @@ class Dataset():
             pos_pixel=item2['relative_pose']["position"]
             empty_array_pos=np.append(empty_array_pos,np.asarray(pos_pixel))
             relative_quat=np.array(item2['relative_pose']["quaternions"]).reshape(-1,4).flatten()
-            relative_quat=self.allocentric2egocentric(relative_quat, np.asarray(pos_pixel))
+            if self.split=='train':
+                relative_quat=self.allocentric2egocentric(relative_quat, np.asarray(pos_pixel))
             if self.rot_rep=='rot':
                 relative_quat=quat2mat(relative_quat)
             empty_array_quat=np.append(empty_array_quat,np.asarray(relative_quat))
