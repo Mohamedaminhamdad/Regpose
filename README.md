@@ -3,7 +3,7 @@
 ### Introduction
 
 In this project The 6DoF Pose estimation Network Regpose was implemented: 
-Regpose is an end-to-end 6DoF pose estimation network. Regpose estimated the class of objects appearing in an images frame and theire class. Followed by regressing the global translation and rotation. The network has two different approaches implemented, how it regresses the rotation, one using a quaternion representation and one using a 6D rotation representation. The approach is motivated by Efficientdet [arXiv](https://arxiv.org/abs/1911.09070). The code was taken from [Project](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch).
+Regpose is an end-to-end 6DoF pose estimation network. Regpose estimated the class of objects appearing in an images frame and theire class. Followed by regressing the global translation and rotation. The network has two different approaches implemented, how it regresses the rotation, one using a quaternion representation and one using a 6D rotation representation. The approach is motivated by Efficientdet [arXiv](https://arxiv.org/abs/1911.09070). Part of the code was taken from [Project](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch).
 
 <p align="center"><img src="./Pictures/Network_architecture.png" width="640" height="320"/></p>
 ### Required environment
